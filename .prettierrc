@@ -1,0 +1,7 @@
+{
+  "endOfLine": "crlf",
+  "printWidth": 120,
+  "arrowParens": "avoid",
+  "singleQuote": false,
+  "trailingComma": "all"
+}
