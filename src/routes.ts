@@ -2,14 +2,17 @@ import { Request, Response, Router } from "express";
 import authMiddleware from "./http/middlewares/AuthMiddleware";
 import AuthenticateUserController from "./useCases/authenticateUser/AuthenticateUserController";
 import CreateUserController from "./useCases/createUser/CreateUserController";
+import RefreshTokenUserController from "./useCases/refreshTokenUser/refreshTokenUserController";
 
 const router = Router();
 
 const createUserController = new CreateUserController();
 const authenticateUserController = new AuthenticateUserController();
+const refreshTokenUserController = new RefreshTokenUserController();
 
 router.post("/users", createUserController.handle);
 router.post("/login", authenticateUserController.handle);
+router.post("/refresh-tokens", refreshTokenUserController.handle);
 
 router.use(authMiddleware);
 
